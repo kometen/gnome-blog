@@ -9,4 +9,4 @@ deployed to cloudflare pages via GitHub. But the build failed due to the default
 the version gatsby expects. So I created a site on my Mac, pushed to GitHub and this also failed due to the
 node-versioning, but this time with a different error message. When I searched for this error I saw a
 StackOverflow-question where the answer was to add the expected node-version to the .nvmrc file like
-`node --version > .nvmrc`. When I pushed this version it did deploy successfully. 
+`node --version > .nvmrc`. When I pushed this version it did deploy successfully.
