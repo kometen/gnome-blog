@@ -5,6 +5,8 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faStackOverflow, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
@@ -20,6 +22,8 @@ const Bio = () => {
           }
           social {
             twitter
+            github
+            stackoverflow
           }
         }
       }
@@ -45,10 +49,42 @@ const Bio = () => {
       {author?.name && (
         <p>
           Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You can follow me on Twitter
-          </a>
+            {` `}
+            <div style={{ textAlign: `center`, paddingTop: `15px` }}>
+              <a
+                style={{
+                  fontSize: `1.75em`,
+                  padding: `0em 0.5em`,
+                  color: `#000`,
+                  boxShadow: `none`,
+                }}
+                href={`https://twitter.com/${social.twitter}`}
+              >
+                <FontAwesomeIcon icon={faTwitter} title={'Twitter'}/>
+              </a>
+              <a
+                style={{
+                  fontSize: `1.75em`,
+                  padding: `0em 0.5em`,
+                  color: `#000`,
+                  boxShadow: `none`,
+                }}
+                href={`https://github.com/${social.github}`}
+              >
+                <FontAwesomeIcon icon={faGithub} title={'GitHub'}/>
+              </a>
+              <a
+                style={{
+                  fontSize: `1.75em`,
+                  padding: `0em 0.5em`,
+                  color: `#000`,
+                  boxShadow: `none`,
+                }}
+                href={`https://stackoverflow.com/${social.stackoverflow}`}
+              >
+                <FontAwesomeIcon icon={faStackOverflow} title={'StackOverflow'}/>
+              </a>
+            </div>
         </p>
       )}
     </div>
